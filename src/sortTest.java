@@ -1,4 +1,4 @@
-package test;
+import java.util.*;
 
 public class sortTest {
     public static void bubbleSort(int[] arr) {
@@ -18,8 +18,20 @@ public class sortTest {
         arr[j] = temp;
     }
 
-    public static void main(String args[]) {
-        int arr[] = {5,3,7,4,1};
+    public static void main(String[] args) {
+
+        System.out.println("배열의 갯수를 입력하세요.");
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int[] arr = new int[num];
+        System.out.println("선택한 숫자는 " + arr.length + " 입니다." );
+
+        for(int i=0; i<num; i++){
+            System.out.println("숫자를 입력하세요.");
+            Scanner sc2 = new Scanner(System.in);
+            arr[i] = sc2.nextInt();
+        }
+
         System.out.print("변경 전 : ");
         for(int a : arr) {
             System.out.print(a + " ");
@@ -32,6 +44,4 @@ public class sortTest {
             System.out.print(i + " ");
         }
     }
-
-
 }
