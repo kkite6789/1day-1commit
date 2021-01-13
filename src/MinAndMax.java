@@ -11,15 +11,19 @@ public class MinAndMax {
         Scanner sc = new Scanner(System.in);
         int num=sc.nextInt();//String은 next int는 nextInt
 
+        System.out.println(num+"개의 숫자를 입력합니다.");
+
         int[] array = new int[num];
-        System.out.println(array.length+"개의 숫자를 입력합니다.");
+        Scanner sc2= new Scanner(System.in);
+        String number = sc2.nextLine();
+        String[] array2 = number.split(" ");
 
         System.out.println("입력 시작.");
         for(int i=0; i<num; i++){
-            System.out.println(i+1 +" 번째 숫자를 입력하세요.");
-            Scanner sc2 = new Scanner(System.in);
-            array[i]=sc2.nextInt();
+            array[i]=Integer.parseInt(array2[i]);
         }
+        // 집에서 문자열 갯수 틀리면 출력문 나오게 설정
+        System.out.println("입력된 배열의 갯수 : " + array.length);
         Arrays.sort(array);
         System.out.println("제일 작은 수는 "+array[0]+" 이고 제일 큰 수는 "+array[num-1]+" 입니다.");
     }
