@@ -16,10 +16,6 @@ public class MiddleNumber {
         }
         Arrays.sort(arr);
 
-        System.out.println(arr[0] + " <-- 정렬된 1번째숫자");
-        System.out.println(arr[1] + " <-- 정렬된 2번째숫자");
-        System.out.println(arr[2] + " <-- 정렬된 3번째숫자");
-
         System.out.println("답은 : " + arr[1]);
     }
 
