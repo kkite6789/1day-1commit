@@ -21,15 +21,26 @@ public class SubString_array {
         String num = sc.nextLine();
 
         String[] array1;
+        //int[][][] commands;
         array1 = num.split(" ");
-        int[] array2 = new int[array1.length];
+        int[] array = new int[array1.length];
 
-        System.out.println(array2.length);
+        System.out.println(array.length);
         for(int i=0; i<array1.length; i++){
-           array2[i] = Integer.parseInt(array1[i]);
-            System.out.println(array2[i] + " <-- array 안 "+ i + " 번째 숫자");
+           array[i] = Integer.parseInt(array1[i]);
+            System.out.println(array[i] + " <-- array 안 "+ i + " 번째 숫자");
         }
-    // 내일 오류 분석 및 전체적인 수정요망
+        System.out.println("시작할 첫 문자열 위치(숫자로)");
+        Scanner sc2 = new Scanner(System.in);
+        int startNum = sc2.nextInt();
+        System.out.println("끝낼 마지막 문자열 위치(숫자로)");
+        Scanner sc3 = new Scanner(System.in);
+        int lastNum = sc3.nextInt();
+        Scanner sc4 = new Scanner(System.in);
+        int pickNum = sc4.nextInt();
+        // commands = new int[startNum][lastNum][pickNum];
+
+
 
     }
 }
