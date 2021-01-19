@@ -7,7 +7,7 @@ public class SubString_array {
     //array의 값들에서 commands의 2차원 배열로 (첫문자열,끝문자열,몇번째숫자) 값을 정해 int배열로 return을 보낸다.
     public int[] solution(int[] array, int[][] commands) {
         // 풀어보기
-
+    // 1/19 모의면접준비로 대체
 
         return null;
     }
