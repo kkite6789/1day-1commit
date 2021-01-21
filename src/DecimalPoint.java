@@ -18,6 +18,7 @@ public class DecimalPoint {
         double avg = (double)sum/4;
         System.out.println(avg);
         //System.out.println(String.format("%.1f",avg));
-        System.out.println(Math.round(avg*10)/10.0);
+        
+        System.out.println("소수점 첫번째까지 나타나게 반올림 : " + Math.round(avg*10)/10.0);
     }
 }
