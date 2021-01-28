@@ -18,7 +18,6 @@ public class SearchString2 {
                     }
                 }
             }
-
         }
         return count;
     }
@@ -31,5 +30,4 @@ public class SearchString2 {
         int count = searchCount(a,b);
         System.out.println("count : " + count);
     }
-
 }
