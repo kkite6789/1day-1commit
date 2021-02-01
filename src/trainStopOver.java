@@ -21,18 +21,21 @@ public class trainStopOver {
             // 하차와 승차를 따로 구분
             if(i==0) {
                 System.out.println("첫번째 역입니다.");
-                System.out.println("0 탑승수  <-- 이렇게 입력해 주세요.");
+                System.out.println("탑승한 승객 수를 적어주세요.");
+                cnt+=sc.nextInt();
             }
-            else if(i<3) {
+            else if(i>0 && i<3) {
                 System.out.println(i + " 번째 역입니다.");
+                System.out.println("하차 승차 인원을 띄워쓰기로 구분해 적어주세요.");
+                System.out.println("ex) 5 10");
+                cnt -= sc.nextInt(); //하차
+                cnt += sc.nextInt(); //승차
             }
-            else {
+            else if(i==3) {
                 System.out.println("마지막 역입니다.");
-                System.out.println("하차한 승객 수 0 <-- 이렇게 입력해 주세요.");
+                System.out.println("하차한 승객 수를 적어주세요.");
+                cnt-=sc.nextInt();
             }
-            cnt-=sc.nextInt(); //하차
-            cnt+=sc.nextInt(); //승차
-
             if(cnt>max){ // 승객이 가장 많을 때 max에 저장한다.
                 max=cnt;
             }
