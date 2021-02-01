@@ -24,14 +24,14 @@ public class trainStopOver {
                 System.out.println("탑승한 승객 수를 적어주세요.");
                 cnt+=sc.nextInt();
             }
-            else if(i>0 && i<3) {
+            else if(i<3) {
                 System.out.println(i + " 번째 역입니다.");
                 System.out.println("하차 승차 인원을 띄워쓰기로 구분해 적어주세요.");
                 System.out.println("ex) 5 10");
                 cnt -= sc.nextInt(); //하차
                 cnt += sc.nextInt(); //승차
             }
-            else if(i==3) {
+            else {
                 System.out.println("마지막 역입니다.");
                 System.out.println("하차한 승객 수를 적어주세요.");
                 cnt-=sc.nextInt();
