@@ -23,28 +23,37 @@ public class RockScissorPaper {
             System.out.println(i + "회차");
             choice = sc.next();
             computerChoice = (int)(Math.random()*3)+1; // 0:가위 1:바위 2:보
-            if (choice.equals("가위")) {
-                playerPick = 0;
-            } else if (choice.equals("바위")) {
-                playerPick = 1;
-            } else if (choice.equals("보")) {
-                playerPick = 2;
-            } else {
-                System.out.println("가위 바위 보중에 입력하세요.");
-                break;
+            switch(choice){
+                case "가위" :
+                    playerPick = 0;
+                    break;
+                case "바위" :
+                    playerPick = 1;
+                    break;
+                case "보" :
+                    playerPick=2;
+                    break;
+                default:
+                    System.out.println("가위 바위 보중에 입력하세요.");
+                    playerPick=00;
+                    break;
+
             }
-            if((playerPick == 0 && computerChoice == 1) || (playerPick == 1 && computerChoice == 2) || (playerPick == 2 && computerChoice == 0)){
+            if (playerPick == 00){
+                System.out.println("실격입니다.");
+                break;
+            } else if ((playerPick == 0 && computerChoice == 1) || (playerPick == 1 && computerChoice == 2) || (playerPick == 2 && computerChoice == 0)) {
                 System.out.println(i + " 라운드 패배했습니다.");
                 System.out.println("탈락입니다.  : ( ");
                 break;
-            } else if((playerPick == 0 && computerChoice == 0) || (playerPick == 1 && computerChoice == 1) || (playerPick == 2 && computerChoice == 2)){
+            } else if ((playerPick == 0 && computerChoice == 0) || (playerPick == 1 && computerChoice == 1) || (playerPick == 2 && computerChoice == 2)) {
                 System.out.println(i + " 라운드 비겼습니다.");
                 System.out.println(winPoint + " 점 획득! 다음라운드로 진행합니다.");
-                score+=winPoint;
-            } else{
+                score += winPoint;
+            } else {
                 System.out.println(i + " 라운드 승리했습니다!");
                 System.out.println(drawPoint + " 점 획득! 다음라운드로 진행합니다.");
-                score+=drawPoint;
+                score += drawPoint;
             }
         }
         System.out.println("총 점수는 : " + score + " 입니다. ");
