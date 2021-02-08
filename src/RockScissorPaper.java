@@ -35,11 +35,11 @@ public class RockScissorPaper {
                     break;
                 default:
                     System.out.println("가위 바위 보중에 입력하세요.");
-                    playerPick=00;
+                    playerPick=7;
                     break;
 
             }
-            if (playerPick == 00){
+            if (playerPick == 7){
                 System.out.println("실격입니다.");
                 break;
             } else if ((playerPick == 0 && computerChoice == 1) || (playerPick == 1 && computerChoice == 2) || (playerPick == 2 && computerChoice == 0)) {
@@ -48,12 +48,12 @@ public class RockScissorPaper {
                 break;
             } else if ((playerPick == 0 && computerChoice == 0) || (playerPick == 1 && computerChoice == 1) || (playerPick == 2 && computerChoice == 2)) {
                 System.out.println(i + " 라운드 비겼습니다.");
-                System.out.println(winPoint + " 점 획득! 다음라운드로 진행합니다.");
-                score += winPoint;
-            } else {
-                System.out.println(i + " 라운드 승리했습니다!");
                 System.out.println(drawPoint + " 점 획득! 다음라운드로 진행합니다.");
                 score += drawPoint;
+            } else {
+                System.out.println(i + " 라운드 승리했습니다!");
+                System.out.println(winPoint + " 점 획득! 다음라운드로 진행합니다.");
+                score += winPoint;
             }
         }
         System.out.println("총 점수는 : " + score + " 입니다. ");
