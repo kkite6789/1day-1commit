@@ -49,14 +49,8 @@ public class MukJjiBba {
             }
         }
         if ((userChoice.equals("묵") && computerChoice == 1) || (userChoice.equals("찌") && computerChoice == 2) || (userChoice.equals("빠") && computerChoice == 0)) {
-            System.out.println("컴퓨터 :" + computerChoice);
-            System.out.println("이겼습니다. 다시 공격하세요!!");
-            System.out.println("'묵' '찌' '빠' 중에 고르세요.");
             win=2; // 공격턴
         } else if((userChoice.equals("묵") && computerChoice == 2) || (userChoice.equals("찌") && computerChoice == 0) || (userChoice.equals("빠") && computerChoice == 1)){
-            System.out.println("컴퓨터 :" + computerChoice);
-            System.out.println("졌습니다. 다시 수비하세요.");
-            System.out.println("'묵' '찌' '빠' 중에 고르세요.");
             win=3;// 수비턴
         }
         return win;
