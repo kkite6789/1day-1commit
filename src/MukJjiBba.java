@@ -10,20 +10,34 @@ public class MukJjiBba {
         //첫 가위바위보로 승패정하기
 
         int whoWin=0; // 0이 무승부  1이 승리 2가 패배
-
+        String computerChoiceString="";
+        switch(computerChoice){
+            case 0 :
+                computerChoiceString="묵";
+                break;
+            case 1 :
+                computerChoiceString="찌";
+                break;
+            case 2 :
+                computerChoiceString="빠";
+                break;
+        }
             if ((userChoice.equals("묵") && computerChoice == 0) || (userChoice.equals("찌") && computerChoice == 1) || (userChoice.equals("빠") && computerChoice == 2)) {
-                System.out.println("컴퓨터 :" + computerChoice);
+                System.out.println(computerChoice +" <-- 컴퓨터 숫자");
+                System.out.println("컴퓨터 :" + computerChoiceString);
                 System.out.println("비겼습니다. 다시 가위바위보!");
                 System.out.println("다시 '묵' '찌' '빠' 중에 고르세요.");
             }
             else if ((userChoice.equals("묵") && computerChoice == 1) || (userChoice.equals("찌") && computerChoice == 2) || (userChoice.equals("빠") && computerChoice == 0)) {
-                System.out.println("컴퓨터 :" + computerChoice);
+                System.out.println(computerChoice +" <-- 컴퓨터 숫자");
+                System.out.println("컴퓨터 :" + computerChoiceString);
                 System.out.println("이겼습니다. 공격하세요!!");
                 System.out.println("'묵' '찌' '빠' 중에 고르세요.");
                 whoWin=1;
             }
             else{
-                System.out.println("컴퓨터 :" + computerChoice);
+                System.out.println(computerChoice +" <-- 컴퓨터 숫자");
+                System.out.println("컴퓨터 :" + computerChoiceString);
                 System.out.println("졌습니다. 수비하세요.");
                 System.out.println("'묵' '찌' '빠' 중에 고르세요.");
                 whoWin=2;
@@ -33,16 +47,28 @@ public class MukJjiBba {
     }
     public static int phase2(int whoWin, String userChoice, int computerChoice){
         int win=0;
+        String computerChoiceString="";
+        switch(computerChoice){
+            case 0 :
+                computerChoiceString="묵";
+                break;
+            case 1 :
+                computerChoiceString="찌";
+                break;
+            case 2 :
+                computerChoiceString="빠";
+                break;
+        }
         if(whoWin==1) {//승리일 때
             if ((userChoice.equals("묵") && computerChoice == 0) || (userChoice.equals("찌") && computerChoice == 1) || (userChoice.equals("빠") && computerChoice == 2)) {
-                System.out.println("컴퓨터 :" + computerChoice);
+                System.out.println("컴퓨터 :" + computerChoiceString);
                 System.out.println("묵찌바 승리!");
                 System.out.println("축하합니다.");
                 win = 1; // 확정 승리
             }
         } else if(whoWin==2){
             if ((userChoice.equals("묵") && computerChoice == 0) || (userChoice.equals("찌") && computerChoice == 1) || (userChoice.equals("빠") && computerChoice == 2)) {
-                System.out.println("컴퓨터 :" + computerChoice);
+                System.out.println("컴퓨터 :" + computerChoiceString);
                 System.out.println("묵찌바 패배..");
                 System.out.println("다음에 도전하세요.");
                 win = 1; // 확정 패배
@@ -60,6 +86,7 @@ public class MukJjiBba {
         System.out.println("가위바위보! '묵' '찌' '빠' 중에 고르세요.");
         String userChoice=sc.next();
         int win = 0;
+        int round = 0; //회ㅏ
         int computerChoice=(int)(Math.random()*3);
         while(true){
             int whoWin = rsp(userChoice, computerChoice);
