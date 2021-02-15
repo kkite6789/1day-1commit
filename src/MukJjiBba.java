@@ -6,6 +6,14 @@ public class MukJjiBba {
     //컴퓨터와 묵찌빠하기
     //처음 시작은 가위바위보로 결정
     //이기면 공격 비기면 다시 지면 수비이다.
+    //whoWin은 묵찌빠에서 첫 승리,패배,무승부를 의미한다 0 - 무승부, 1- 승리, 2-패배
+    //win 은 승부를 결정내는 것으로 1이 나오면 이겼거나 패배했거나 이다.(whoWin의 값에 따라 승/패가 나뉨)
+    // 간단규칙
+    // 1. 가위바위보를 한쪽이 이길때까지 반복한다.
+    //    1.1 가위바위보를 이긴 사람이 공격턴을 잡는다.
+    // 2. 그 후 묵 찌 빠 중 하나를 내어 같은 것을 내면 공격턴은 승리, 수비턴은 패배한다.
+    //    2.1 하지만 공격턴이 묵 찌 빠에서 가위바위보를 지게 되면 공격과 수비는 전환된다.
+    //    2.2 그대로 반복한다.
     public static int rsp(String userChoice,int computerChoice){
         //첫 가위바위보로 승패정하기
 
@@ -83,10 +91,17 @@ public class MukJjiBba {
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        //간단규칙
+        System.out.println("1. 가위바위보를 한쪽이 이길때까지 반복한다.");
+        System.out.println("    1.1 가위바위보를 이긴 사람이 공격턴을 잡는다.");
+        System.out.println("2. 그 후 묵 찌 빠 중 하나를 내어 같은 것을 내면 공격턴은 승리, 수비턴은 패배한다.");
+        System.out.println("    2.1 하지만 공격턴이 묵 찌 빠에서 가위바위보를 지게 되면 공격과 수비는 전환된다.");
+        System.out.println("    2.2 그대로 반복한다.");
+        System.out.println("--------------------------------------------------------------------------------");
         System.out.println("가위바위보! '묵' '찌' '빠' 중에 고르세요.");
         String userChoice=sc.next();
         int win = 0;
-        int round = 0; //회ㅏ
+        int round = 0; //회차
         int computerChoice=(int)(Math.random()*3);
         while(true){
             int whoWin = rsp(userChoice, computerChoice);
@@ -109,7 +124,7 @@ public class MukJjiBba {
                 userChoice = sc.next();
                 computerChoice = (int) (Math.random() * 3);
                 win = phase2(whoWin, userChoice, computerChoice);
-                if(win==1) {
+                if(win==1) { // 묵찌빠 패배
                     break;
                 } else if(win==2){ // 공격으로 변경
                     whoWin=1;
