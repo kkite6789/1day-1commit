@@ -25,6 +25,10 @@ public class ReplaceToBinary {
                 break;
             }
         }
-        System.out.println(originNum + ")2  :  " + num1);
+//        System.out.println(num1.length()); num 길이
+        System.out.print(originNum + ")2  :  ");
+        for(int i=num1.length()-1; i>=0; i--){ // 문자열 거꾸로 만들기
+            System.out.print(num1.charAt(i)); // 문자열을 반대로 출력시킨다.
+        }
     }
 }
